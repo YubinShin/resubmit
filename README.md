@@ -28,12 +28,13 @@ Kotlin CLI 실행
 - 프로젝트 목표와 첫 실행 흐름
 - 초기 아키텍처 결정 기록(ADR)
 - Kotlin/JVM 21 단일 Gradle 프로젝트와 Gradle Wrapper
-- 최소 CLI 진입점과 단위 테스트
+- 문제 표시와 Java 제출 경로 검증 CLI
+- CLI 정상·오류 입력 단위 테스트
 - Gradle build/test용 GitHub Actions workflow
 
 ### 아직 구현되지 않음
 
-- 제출을 입력받는 CLI와 상태 머신
+- 제출 상태 머신
 - Java compile/test runner
 - LLM 및 fixture review provider
 - JSONL 실행 이력
@@ -122,7 +123,7 @@ coding-test fixtures (read-only test data)
 ./gradlew run
 ```
 
-현재 `run` 명령은 프로젝트 배너를 출력한다. 제출 데모 명령은 runner 구현 후 추가한다.
+현재 `run` 명령은 내장 문제를 표시하고 제출할 Java 파일 경로를 입력받는다. 파일 존재 여부와 `.java` 확장자까지만 확인하며, 아직 컴파일하거나 채점하지 않는다.
 
 ## CI
 
