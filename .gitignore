@@ -1,0 +1,22 @@
+# Existing coding-test materials are read-only fixtures, not part of this repository.
+/coding-test/
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# macOS
+.DS_Store
+
+# Local environment and run history
+.env
+.env.*
+!.env.example
+/data/runs/
+
