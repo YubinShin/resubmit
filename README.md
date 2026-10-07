@@ -2,7 +2,7 @@
 
 코딩 테스트 제출을 직접 실행하고, 실행 결과를 근거로 단계적 힌트를 제공하는 개인용 학습 도구다.
 
-현재 저장소는 설계와 CI 골격을 작성한 초기 단계다. 애플리케이션 코드는 아직 구현하지 않았다.
+현재 저장소는 Kotlin/JVM 프로젝트, CLI 진입점, 단위 테스트와 CI 골격을 작성한 초기 단계다. Java 실행과 리뷰 workflow는 아직 구현하지 않았다.
 
 ## 목표
 
@@ -27,16 +27,17 @@ Kotlin CLI 실행
 
 - 프로젝트 목표와 첫 실행 흐름
 - 초기 아키텍처 결정 기록(ADR)
-- Gradle build/test용 GitHub Actions workflow 골격
+- Kotlin/JVM 21 단일 Gradle 프로젝트와 Gradle Wrapper
+- 최소 CLI 진입점과 단위 테스트
+- Gradle build/test용 GitHub Actions workflow
 
 ### 아직 구현되지 않음
 
-- Kotlin/Gradle 프로젝트와 Gradle Wrapper
-- CLI와 상태 머신
+- 제출을 입력받는 CLI와 상태 머신
 - Java compile/test runner
 - LLM 및 fixture review provider
 - JSONL 실행 이력
-- 자동화 테스트와 실행 데모
+- runner와 workflow 자동화 테스트 및 제출 데모
 
 구현 여부는 이 목록과 실제 코드·테스트 결과를 함께 갱신한다.
 
@@ -113,17 +114,15 @@ coding-test fixtures (read-only test data)
 - 과거 기록을 새 runner가 생성한 결과처럼 사용하지 않는다.
 - 자동화 테스트에는 필요한 최소 사례를 별도 test resource로 복제한다.
 
-## 예정 실행 방법
-
-아래 명령은 Gradle Wrapper와 애플리케이션 코드가 추가된 뒤 사용할 계약이다. 현재는 실행할 수 없다.
+## 실행 방법
 
 ```bash
 ./gradlew build
 ./gradlew test
-./gradlew run --args="demo --submission samples/WrongSolution.java"
+./gradlew run
 ```
 
-실제 명령이 구현되면 이 절을 실행 결과와 함께 갱신한다.
+현재 `run` 명령은 프로젝트 배너를 출력한다. 제출 데모 명령은 runner 구현 후 추가한다.
 
 ## CI
 
@@ -133,7 +132,7 @@ GitHub Actions는 pull request와 기본 브랜치 push에서 다음 검증을 �
 2. JDK 21 설정
 3. `./gradlew build`
 
-현재 workflow는 Gradle Wrapper가 아직 없으므로 통과하지 않는다. 첫 Kotlin 프로젝트 생성 시 wrapper를 커밋하고 로컬 `./gradlew build` 결과와 Actions 결과를 함께 확인한다.
+로컬에서는 JDK 21 환경에서 `./gradlew build`와 `./gradlew run`을 검증한다. Actions 결과는 README의 구현 상태를 갱신할 때 함께 확인한다.
 
 실제 API를 사용하는 LLM 평가는 기본 CI에 넣지 않는다. 작은 고정 fixture 검증을 먼저 추가하고, 유료 평가는 이후 수동 workflow로 분리한다.
 
@@ -147,4 +146,3 @@ OPENAI_MODEL
 ```
 
 fixture mode는 환경변수 없이 동작하게 만든다.
-
