@@ -104,7 +104,7 @@ coding-test fixtures (read-only test data)
 - repository는 실행과 평가 근거를 저장한다.
 - CLI 입출력은 핵심 workflow와 분리한다.
 
-상세 결정과 변경 이유는 [`docs/adr`](docs/adr/README.md)에 기록한다.
+상세 결정과 변경 이유는 [`docs/adr`](docs/adr/README.md)에 기록한다. CLI의 목표 사용자 흐름과 화면 명세는 [`docs/product/cli-ux.md`](docs/product/cli-ux.md)에 기록한다.
 
 ## 테스트 자료
 
