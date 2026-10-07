@@ -19,4 +19,4 @@ out/
 .env.*
 !.env.example
 /data/runs/
-
+/.resubmit/
