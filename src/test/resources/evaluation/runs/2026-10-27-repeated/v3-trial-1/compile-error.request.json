@@ -1,0 +1,59 @@
+{
+  "model": "gemini-3.8-flash",
+  "store": false,
+  "system_instruction": "실행 결과를 변경하지 말고 제출 코드와 제공된 테스트 결과만 근거로 분석하세요. 정답 코드나 완성 풀이를 제공하지 말고 점진적인 힌트 3개를 작성하세요. 첫 번째는 개념과 확인 방향, 두 번째는 제출 코드의 구체적인 문제, 세 번째는 의사코드 수준의 개선 방향이어야 합니다. evidence에는 확인 가능한 코드, 컴파일러 또는 테스트 근거만 포함하세요. 정적 분석 근거를 인용할 때는 제공된 근거 ID만 citedEvidenceIds에 넣고, 목록에 없는 ID를 만들지 마세요. 정적 분석 근거만으로 오답이나 시간 복잡도를 단정하지 마세요. 직전 제출 정보는 변화 설명에만 사용하고 현재 제출의 판정 근거와 혼동하지 마세요. 한국어로 작성하세요.",
+  "input": "문제 ID: sum-array-evaluation-v1\n문제: 배열 합계\n설명: 길이 0~10인 정수 배열의 모든 원소를 더해 반환한다. 원소는 -100~100이다.\n제출 규약: public class Solution에 public int solution(int[] numbers)를 구현한다.\n확정된 컴파일 결과: FAILED (exit=1)\njavac 진단:\nSolution.java:1: error: ';' expected\npublic class Solution { public int solution(int[] numbers) { return 0 } }\n                                                                     ^\n1 error\n\n제출 코드:\n```java\npublic class Solution { public int solution(int[] numbers) { return 0 } }\n```\n",
+  "response_format": {
+    "type": "text",
+    "mime_type": "application/json",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "relatedSkills": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1
+        },
+        "citedEvidenceIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "relatedSkills",
+        "evidence",
+        "citedEvidenceIds",
+        "hints"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "generation_config": {
+    "max_output_tokens": 2048
+  }
+}

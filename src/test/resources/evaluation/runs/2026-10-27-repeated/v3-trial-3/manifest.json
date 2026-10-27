@@ -1,0 +1,233 @@
+{
+  "createdAt": "2026-10-27T09:36:58.610881+00:00",
+  "commit": "2f4721067094b1b226b26ae03dcc5a23a347aa88",
+  "runnerSha256": "369951224f26b7262867ae0988aa81584f943aa8dd8964c08ed1d3f59b552da5",
+  "datasetSha256": "334c80905fcab5472e9343db6ff76d3ab6cd8d2c03d8afdd423fb62689e41671",
+  "datasetVersion": 2,
+  "model": "gemini-3.8-flash",
+  "maxCalls": 48,
+  "maxOutputTokens": 2048,
+  "retryCount": 0,
+  "timeoutSeconds": 30,
+  "rubric": {
+    "executionConsistency": "No statement contradicts actual compilation, execution or expected/actual values.",
+    "citationValidity": "Every cited ID exists in the current request; no AST evidence means not applicable.",
+    "evidenceInterpretation": "Claims are supported by code or execution, not merely an existing ID.",
+    "earlyDisclosure": "For failing submissions, evidence and hint 1 must not give the corrected token, condition or complete solution. Raw javac diagnostics are allowed as evidence; restating their fix in hint 1 fails. Borderline disclosures are uncertain, not pass.",
+    "falseWarning": "On passing submissions, do not invent a defect; optional simplification is not a defect warning.",
+    "resubmissionComparison": "For dependent cases, explicitly connect old/current code and test changes; partial-fix must retain the mixed failure. Unknown changes must remain unknown.",
+    "caseRequirements": "Also check each case's required and forbidden statements. Keep separate per-axis labels: pass, fail, uncertain, not_applicable."
+  },
+  "runOrder": [
+    "v3-trial-1",
+    "v4-trial-1",
+    "v4-trial-2",
+    "v3-trial-2",
+    "v3-trial-3",
+    "v4-trial-3"
+  ],
+  "templateSha256": {
+    "missing-last": "fb037a4e79e55c5b7a2c27ee1ae345af3e585172807fcb4c58bcdebe9c312d18",
+    "corrected": "24a239980fe5a64efc82fbe77d0ad4da79e01a2879731a811ae97bfdf94fd283",
+    "compile-error": "866cf9e0af8ea689aa7c1d56f3ab3ccd6beefa63abfd96994b6e057b3cefb2df",
+    "valid-nested-loop": "63cede3034ba4b9b0f8eb116b84718774b3bb360f8c3456df204fcf6c2a1b71e",
+    "missing-first": "029e340df9c7c0eab47bbd55b38e371f918d66e9cd77474bdb69d10f52ce0df9",
+    "compile-missing-parenthesis": "c84b5cf47fa70454695053d1717158b00b3e8b58b163b96972380c75817f6647",
+    "valid-foreach": "ed48f4436b7a71efff2424f1d3daffcab114a6bbe76d134c84935a1599c049fb",
+    "partial-fix": "928053ebba76cdd9ac2a45cbd8674efd5ccc66784786b31b9b3708645d7349b8"
+  },
+  "instructionSha256": {
+    "v3": "4338c75fa0b37f0e7eea578d795a12b2b83b44da9fa3640cbf8b91791c0ed4a7",
+    "v4": "4f77bf537a1912080ed15b90c1aad237fa87b0ab59a506117de0bfd68bbb976a"
+  },
+  "limits": "Same small sum problem; three trials are not population-level reliability. Dependent cases use each version's first response, so their context differs. No independent human grader.",
+  "promptVersion": "review-v3",
+  "trial": 3,
+  "orchestration": "Python runner, Kotlin-generated request preview; scripted resubmission, not full CLI demo.",
+  "calls": [
+    {
+      "caseId": "missing-last",
+      "sourceSha256": "ed91241aabaf5a0a729d05ab8a917a2d01564c398602346e012052d11ba5b14b",
+      "requestBytes": 2396,
+      "httpStatus": 200,
+      "elapsedMs": 7281,
+      "usage": {
+        "total_tokens": 1077,
+        "total_input_tokens": 422,
+        "input_tokens_by_modality": [
+          {
+            "modality": "text",
+            "tokens": 422
+          }
+        ],
+        "total_cached_tokens": 0,
+        "total_output_tokens": 292,
+        "total_tool_use_tokens": 0,
+        "total_thought_tokens": 363
+      },
+      "responseStatus": "completed",
+      "status": "RECEIVED"
+    },
+    {
+      "caseId": "corrected",
+      "sourceSha256": "b748338f1d44878d536c05100639abdb7b6613d6b6554ca0311a70d3335045a5",
+      "requestBytes": 3196,
+      "httpStatus": 200,
+      "elapsedMs": 8445,
+      "usage": {
+        "total_tokens": 1255,
+        "total_input_tokens": 618,
+        "input_tokens_by_modality": [
+          {
+            "modality": "text",
+            "tokens": 618
+          }
+        ],
+        "total_cached_tokens": 0,
+        "total_output_tokens": 295,
+        "total_tool_use_tokens": 0,
+        "total_thought_tokens": 342
+      },
+      "responseStatus": "completed",
+      "status": "RECEIVED"
+    },
+    {
+      "caseId": "compile-error",
+      "sourceSha256": "ba60efaac82b9e40cfbb9bbdee2697c226a7744cd6f0a07812c5d354726fa47c",
+      "requestBytes": 2219,
+      "httpStatus": 200,
+      "elapsedMs": 5539,
+      "usage": {
+        "total_tokens": 846,
+        "total_input_tokens": 341,
+        "input_tokens_by_modality": [
+          {
+            "modality": "text",
+            "tokens": 341
+          }
+        ],
+        "total_cached_tokens": 0,
+        "total_output_tokens": 292,
+        "total_tool_use_tokens": 0,
+        "total_thought_tokens": 213
+      },
+      "responseStatus": "completed",
+      "status": "RECEIVED"
+    },
+    {
+      "caseId": "valid-nested-loop",
+      "sourceSha256": "78237caf06eb29dae4d616a90c49fb6d879a71712412660e6069db54552ef521",
+      "requestBytes": 2424,
+      "httpStatus": 200,
+      "elapsedMs": 7564,
+      "usage": {
+        "total_tokens": 1077,
+        "total_input_tokens": 435,
+        "input_tokens_by_modality": [
+          {
+            "modality": "text",
+            "tokens": 435
+          }
+        ],
+        "total_cached_tokens": 0,
+        "total_output_tokens": 309,
+        "total_tool_use_tokens": 0,
+        "total_thought_tokens": 333
+      },
+      "responseStatus": "completed",
+      "status": "RECEIVED"
+    },
+    {
+      "caseId": "missing-first",
+      "sourceSha256": "b1a7962b0ca61554f8227105cec518d387dffb3f0dd1f9f5ea8f1528b4327570",
+      "requestBytes": 2392,
+      "httpStatus": 200,
+      "elapsedMs": 6121,
+      "usage": {
+        "total_tokens": 1019,
+        "total_input_tokens": 420,
+        "input_tokens_by_modality": [
+          {
+            "modality": "text",
+            "tokens": 420
+          }
+        ],
+        "total_cached_tokens": 0,
+        "total_output_tokens": 310,
+        "total_tool_use_tokens": 0,
+        "total_thought_tokens": 289
+      },
+      "responseStatus": "completed",
+      "status": "RECEIVED"
+    },
+    {
+      "caseId": "compile-missing-parenthesis",
+      "sourceSha256": "1e7fe53a39ed32da052563df9efb8213d5e05ae6897c3d6d3db2cc2457e624d6",
+      "requestBytes": 2334,
+      "httpStatus": 200,
+      "elapsedMs": 5082,
+      "usage": {
+        "total_tokens": 851,
+        "total_input_tokens": 376,
+        "input_tokens_by_modality": [
+          {
+            "modality": "text",
+            "tokens": 376
+          }
+        ],
+        "total_cached_tokens": 0,
+        "total_output_tokens": 248,
+        "total_tool_use_tokens": 0,
+        "total_thought_tokens": 227
+      },
+      "responseStatus": "completed",
+      "status": "RECEIVED"
+    },
+    {
+      "caseId": "valid-foreach",
+      "sourceSha256": "39b91c42d5ed63a7336deabd94d962029eeafb95e2f474ce98701f51b436a715",
+      "requestBytes": 2389,
+      "httpStatus": 200,
+      "elapsedMs": 6092,
+      "usage": {
+        "total_tokens": 949,
+        "total_input_tokens": 415,
+        "input_tokens_by_modality": [
+          {
+            "modality": "text",
+            "tokens": 415
+          }
+        ],
+        "total_cached_tokens": 0,
+        "total_output_tokens": 307,
+        "total_tool_use_tokens": 0,
+        "total_thought_tokens": 227
+      },
+      "responseStatus": "completed",
+      "status": "RECEIVED"
+    },
+    {
+      "caseId": "partial-fix",
+      "sourceSha256": "541887f902d02cf55c63c2b713ac75e9f8d2d06ed814a6bfc0bc1e239adea8fc",
+      "requestBytes": 3244,
+      "httpStatus": 200,
+      "elapsedMs": 7405,
+      "usage": {
+        "total_tokens": 1232,
+        "total_input_tokens": 635,
+        "input_tokens_by_modality": [
+          {
+            "modality": "text",
+            "tokens": 635
+          }
+        ],
+        "total_cached_tokens": 0,
+        "total_output_tokens": 327,
+        "total_tool_use_tokens": 0,
+        "total_thought_tokens": 270
+      },
+      "responseStatus": "completed",
+      "status": "RECEIVED"
+    }
+  ]
+}

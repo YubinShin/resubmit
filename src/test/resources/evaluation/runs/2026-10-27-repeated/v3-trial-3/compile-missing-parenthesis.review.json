@@ -1,0 +1,16 @@
+{
+  "relatedSkills": [
+    "Java 문법",
+    "메서드 선언 구문"
+  ],
+  "evidence": [
+    "Solution.java:1: error: ',', ')', or '[' expected",
+    "제출 코드: public class Solution { public int solution(int[] numbers { int sum = 0; for (int number : numbers) sum += number; return sum; } }"
+  ],
+  "citedEvidenceIds": [],
+  "hints": [
+    "Java에서 메서드를 정의할 때 매개변수 목록의 시작과 끝을 감싸는 괄호 구문이 올바르게 닫혀 있는지 확인해 보세요.",
+    "solution 메서드의 매개변수인 int[] numbers 뒤에 닫는 괄호 ')'가 누락된 채 본문 블록 '{'이 시작되고 있습니다.",
+    "메서드 선언부를 '반환타입 메서드명(매개변수타입 매개변수명) { 메서드 본문 }' 형식에 맞게 괄호 쌍을 맞추어 수정해 보세요."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "relatedSkills": [
+    "자바 문법(Java Syntax)",
+    "메서드 선언(Method Declaration)"
+  ],
+  "evidence": [
+    "Solution.java:1: error: ',', ')', or '[' expected (위치: public int solution(int[] numbers {)",
+    "제출 코드: public class Solution { public int solution(int[] numbers { int sum = 0; for (int number : numbers) sum += number; return sum; } }"
+  ],
+  "citedEvidenceIds": [],
+  "hints": [
+    "자바에서 메서드를 정의할 때 매개변수 목록을 선언하는 문법 규칙과 괄호의 짝이 올바르게 맞추어져 있는지 확인해 보세요.",
+    "`solution` 메서드의 매개변수 목록 `(int[] numbers` 뒤에 매개변수 선언부를 닫는 소괄호 `)`가 누락되어 컴파일 에러가 발생하고 있습니다.",
+    "`public int solution(매개변수타입 매개변수이름) { 메서드 본문 }` 형태로 매개변수 뒤에 소괄호 `)`를 닫은 후 중괄호 `{`로 메서드 본문을 시작하도록 수정해 보세요."
+  ]
+}

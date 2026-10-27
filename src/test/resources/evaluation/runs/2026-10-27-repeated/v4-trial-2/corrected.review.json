@@ -1,0 +1,19 @@
+{
+  "relatedSkills": [
+    "배열 순회 (Array Iteration)",
+    "누적합 계산 (Cumulative Sum)"
+  ],
+  "evidence": [
+    "재제출 비교: 직전 제출(attemptId: evaluation-missing-last)에서는 반복문 조건식이 'i < numbers.length - 1'로 설정되어 마지막 원소가 누적에서 제외되며 2건의 테스트(singleton, mixed)가 실패했으나, 현재 제출에서는 'i < numbers.length'로 수정되어 제공된 테스트 3건(empty, singleton, mixed)을 모두 통과했습니다.",
+    "확정된 컴파일 결과는 PASSED이며, 모든 테스트 케이스(empty: PASS, singleton: PASS, mixed: PASS)를 만족합니다.",
+    "ev-b748338f-1: Solution.java:1 solution() LOOP_FOR for 반복문이 전체 배열을 탐색하도록 구성되어 있습니다."
+  ],
+  "citedEvidenceIds": [
+    "ev-b748338f-1"
+  ],
+  "hints": [
+    "배열의 전체 원소를 누적 계산할 때 탐색 범위가 배열의 시작부터 끝까지 누락 없이 순회하도록 설계되어 있는지 확인해 보세요.",
+    "현재 인덱스 기반의 반복 조건이 마지막 원소의 인덱스까지 빠짐없이 도달하고 있는지 점검해 보세요. 인덱스 번호 자체가 필요 없는 순회라면 향상된 for문(for-each)을 적용해 코드를 더 간결하게 다듬을 수 있는지도 확인해 보세요.",
+    "누적 합계 로직의 표준적인 흐름을 정리해 보세요:\n1. 누적 변수를 0으로 초기화한다.\n2. 배열의 각 원소를 순회하며 누적 변수에 더한다 (예: for (int num : numbers) { sum += num; }).\n3. 빈 배열(길이 0)일 때도 반복을 건너뛰고 0이 반환되는지 확인한 뒤 최종 합계를 반환한다."
+  ]
+}

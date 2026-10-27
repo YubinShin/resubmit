@@ -1,0 +1,20 @@
+{
+  "relatedSkills": [
+    "배열 순회",
+    "누적 합 계산",
+    "향상된 for 루프"
+  ],
+  "evidence": [
+    "확정된 컴파일 결과: PASSED",
+    "확정된 테스트 결과: empty(PASS, expected=0, actual=0), singleton(PASS, expected=5, actual=5), mixed(PASS, expected=5, actual=5)",
+    "제출 코드 반복문: for (int i = 0; i < numbers.length; i++) sum += numbers[i];"
+  ],
+  "citedEvidenceIds": [
+    "ev-b748338f-1"
+  ],
+  "hints": [
+    "배열의 모든 원소를 누적 합산하는 방식과 더불어, Java에서 컬렉션이나 배열을 순회할 때 인덱스를 직접 다루지 않고 요소를 읽어오는 문법을 고려해 볼 수 있습니다.",
+    "현재 구현은 인덱스 범위(0부터 numbers.length - 1까지)를 정확하게 순회하여 모든 테스트를 통과하고 있습니다. 다만 인덱스 제어 변수를 수동으로 관리하면 조건식 설정 시 실수가 발생할 수 있습니다.",
+    "배열의 인덱스 접근이 필수적이지 않은 합산 문제이므로, `for (int number : numbers)` 형태의 향상된 for 루프를 사용하여 각 원소를 합산 변수에 더하고 반환하는 형태로 간결하게 정리할 수 있습니다."
+  ]
+}

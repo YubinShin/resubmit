@@ -1,0 +1,106 @@
+{
+  "createdAt": "2026-10-27T09:31:20.359300+00:00",
+  "commit": "2f4721067094b1b226b26ae03dcc5a23a347aa88",
+  "datasetSha256": "6c7994142c79647cd19dce4cbcf3e0b50f15e6230b785632e4c332adbaf3d96a",
+  "model": "gemini-3.8-flash",
+  "maxOutputTokens": 2048,
+  "retryCount": 0,
+  "calls": [
+    {
+      "caseId": "missing-last",
+      "requestBytes": 3391,
+      "sourceSha256": "ed91241aabaf5a0a729d05ab8a917a2d01564c398602346e012052d11ba5b14b",
+      "httpStatus": 200,
+      "elapsedMs": 7421,
+      "usage": {
+        "total_tokens": 1227,
+        "total_input_tokens": 628,
+        "input_tokens_by_modality": [
+          {
+            "modality": "text",
+            "tokens": 628
+          }
+        ],
+        "total_cached_tokens": 0,
+        "total_output_tokens": 304,
+        "total_tool_use_tokens": 0,
+        "total_thought_tokens": 295
+      },
+      "responseStatus": "completed",
+      "status": "RECEIVED"
+    },
+    {
+      "caseId": "corrected",
+      "requestBytes": 4284,
+      "sourceSha256": "b748338f1d44878d536c05100639abdb7b6613d6b6554ca0311a70d3335045a5",
+      "httpStatus": 200,
+      "elapsedMs": 11767,
+      "usage": {
+        "total_tokens": 1860,
+        "total_input_tokens": 854,
+        "input_tokens_by_modality": [
+          {
+            "modality": "text",
+            "tokens": 854
+          }
+        ],
+        "total_cached_tokens": 0,
+        "total_output_tokens": 373,
+        "total_tool_use_tokens": 0,
+        "total_thought_tokens": 633
+      },
+      "responseStatus": "completed",
+      "status": "RECEIVED"
+    },
+    {
+      "caseId": "compile-error",
+      "requestBytes": 3214,
+      "sourceSha256": "ba60efaac82b9e40cfbb9bbdee2697c226a7744cd6f0a07812c5d354726fa47c",
+      "httpStatus": 200,
+      "elapsedMs": 6452,
+      "usage": {
+        "total_tokens": 1097,
+        "total_input_tokens": 547,
+        "input_tokens_by_modality": [
+          {
+            "modality": "text",
+            "tokens": 547
+          }
+        ],
+        "total_cached_tokens": 0,
+        "total_output_tokens": 266,
+        "total_tool_use_tokens": 0,
+        "total_thought_tokens": 284
+      },
+      "responseStatus": "completed",
+      "status": "RECEIVED"
+    },
+    {
+      "caseId": "valid-nested-loop",
+      "requestBytes": 3419,
+      "sourceSha256": "78237caf06eb29dae4d616a90c49fb6d879a71712412660e6069db54552ef521",
+      "httpStatus": 200,
+      "elapsedMs": 8640,
+      "usage": {
+        "total_tokens": 1355,
+        "total_input_tokens": 641,
+        "input_tokens_by_modality": [
+          {
+            "modality": "text",
+            "tokens": 641
+          }
+        ],
+        "total_cached_tokens": 0,
+        "total_output_tokens": 335,
+        "total_tool_use_tokens": 0,
+        "total_thought_tokens": 379
+      },
+      "responseStatus": "completed",
+      "status": "RECEIVED"
+    }
+  ],
+  "reviewer": "Codex, manual rubric review; not independent human review",
+  "promptVersion": "review-v4",
+  "orchestration": "Python urllib; Kotlin GeminiReviewProvider preview with output cap and scripted previous-attempt context; not a full CLI demo.",
+  "workingTree": "Production review-v4 committed at 2f47210; replay test extended after calls."
+}

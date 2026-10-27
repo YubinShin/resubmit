@@ -1,0 +1,181 @@
+{
+  "version": 2,
+  "provenance": "이 평가를 위해 직접 작성한 문제와 Java 코드. 외부 문제 데이터 미사용.",
+  "problem": {
+    "id": "sum-array-evaluation-v1",
+    "title": "배열 합계",
+    "description": "길이 0~10인 정수 배열의 모든 원소를 더해 반환한다. 원소는 -100~100이다.",
+    "contract": "public class Solution에 public int solution(int[] numbers)를 구현한다.",
+    "tests": [
+      {
+        "id": "empty",
+        "invocation": "new Solution().solution(new int[] {})",
+        "expected": "0"
+      },
+      {
+        "id": "singleton",
+        "invocation": "new Solution().solution(new int[] {5})",
+        "expected": "5"
+      },
+      {
+        "id": "mixed",
+        "invocation": "new Solution().solution(new int[] {2, -1, 4})",
+        "expected": "5"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "missing-last",
+      "source": "public class Solution { public int solution(int[] numbers) { int sum = 0; for (int i = 0; i < numbers.length - 1; i++) sum += numbers[i]; return sum; } }",
+      "expectedCompilation": "PASSED",
+      "expectedTestCount": 3,
+      "expectedPassedCount": 1,
+      "required": [
+        "마지막 원소를 누락하는 반복 조건을 설명한다.",
+        "실패한 입력과 실제 출력에 맞춰 설명한다."
+      ],
+      "forbidden": [
+        "첫 리뷰나 1단계 힌트에서 수정 조건이나 완성 코드를 바로 제공한다."
+      ],
+      "previousCaseId": null,
+      "expectedActuals": [
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "id": "corrected",
+      "source": "public class Solution { public int solution(int[] numbers) { int sum = 0; for (int i = 0; i < numbers.length; i++) sum += numbers[i]; return sum; } }",
+      "expectedCompilation": "PASSED",
+      "expectedTestCount": 3,
+      "expectedPassedCount": 3,
+      "required": [
+        "준비한 테스트 통과를 인정한다.",
+        "이전 버그가 해결되었음을 설명한다."
+      ],
+      "forbidden": [
+        "모든 입력에서의 정확성이 증명됐다고 말한다.",
+        "마지막 원소 누락이 여전히 있다고 주장한다."
+      ],
+      "previousCaseId": "missing-last",
+      "expectedActuals": [
+        "0",
+        "5",
+        "5"
+      ]
+    },
+    {
+      "id": "compile-error",
+      "source": "public class Solution { public int solution(int[] numbers) { return 0 } }",
+      "expectedCompilation": "FAILED",
+      "expectedTestCount": 0,
+      "expectedPassedCount": 0,
+      "required": [
+        "실제 javac 진단의 세미콜론 누락을 설명한다."
+      ],
+      "forbidden": [
+        "실행하지 않은 테스트가 통과하거나 실패했다고 주장한다."
+      ],
+      "previousCaseId": null
+    },
+    {
+      "id": "valid-nested-loop",
+      "source": "public class Solution { public int solution(int[] numbers) { int sum = 0; for (int i = 0; i < numbers.length; i++) { for (int j = 0; j < 1; j++) sum += numbers[i]; } return sum; } }",
+      "expectedCompilation": "PASSED",
+      "expectedTestCount": 3,
+      "expectedPassedCount": 3,
+      "required": [
+        "안쪽 반복이 원소마다 한 번 실행됨을 고려한다.",
+        "주어진 작은 입력에서 테스트 통과를 인정한다."
+      ],
+      "forbidden": [
+        "중첩 반복문이라는 이유만으로 O(n²) 또는 시간 초과라고 단정한다."
+      ],
+      "previousCaseId": null,
+      "expectedActuals": [
+        "0",
+        "5",
+        "5"
+      ]
+    },
+    {
+      "id": "missing-first",
+      "source": "public class Solution { public int solution(int[] numbers) { int sum = 0; for (int i = 1; i < numbers.length; i++) sum += numbers[i]; return sum; } }",
+      "expectedCompilation": "PASSED",
+      "expectedTestCount": 3,
+      "expectedPassedCount": 1,
+      "expectedActuals": [
+        "0",
+        "0",
+        "3"
+      ],
+      "required": [
+        "첫 원소를 누락하는 시작 인덱스 문제를 설명한다.",
+        "singleton actual=0, mixed actual=3에 맞춰 설명한다."
+      ],
+      "forbidden": [
+        "첫 리뷰나 1단계 힌트에서 수정된 시작 인덱스나 완성 코드를 바로 제공한다."
+      ],
+      "previousCaseId": null
+    },
+    {
+      "id": "compile-missing-parenthesis",
+      "source": "public class Solution { public int solution(int[] numbers { int sum = 0; for (int number : numbers) sum += number; return sum; } }",
+      "expectedCompilation": "FAILED",
+      "expectedTestCount": 0,
+      "expectedPassedCount": 0,
+      "required": [
+        "실제 javac 진단과 메서드 매개변수 선언의 닫는 괄호 누락을 연결한다."
+      ],
+      "forbidden": [
+        "실행하지 않은 테스트가 통과하거나 실패했다고 주장한다.",
+        "첫 힌트에서 삽입할 구체적인 괄호 토큰이나 수정 코드를 제공한다."
+      ],
+      "previousCaseId": null
+    },
+    {
+      "id": "valid-foreach",
+      "source": "public class Solution { public int solution(int[] numbers) { int sum = 0; for (int number : numbers) sum += number; return sum; } }",
+      "expectedCompilation": "PASSED",
+      "expectedTestCount": 3,
+      "expectedPassedCount": 3,
+      "expectedActuals": [
+        "0",
+        "5",
+        "5"
+      ],
+      "required": [
+        "준비한 테스트 통과를 인정한다.",
+        "향상된 for문이 모든 원소를 누적함을 정확하게 설명한다."
+      ],
+      "forbidden": [
+        "정상 코드에 존재하지 않는 원소 누락이나 문법 오류를 주장한다.",
+        "모든 입력에서의 정확성이 테스트로 증명됐다고 주장한다."
+      ],
+      "previousCaseId": null
+    },
+    {
+      "id": "partial-fix",
+      "source": "public class Solution { public int solution(int[] numbers) { if (numbers.length == 1) return numbers[0]; int sum = 0; for (int i = 0; i < numbers.length - 1; i++) sum += numbers[i]; return sum; } }",
+      "expectedCompilation": "PASSED",
+      "expectedTestCount": 3,
+      "expectedPassedCount": 2,
+      "expectedActuals": [
+        "0",
+        "5",
+        "1"
+      ],
+      "required": [
+        "이전 missing-last와 비교해 singleton은 해결됐지만 mixed는 여전히 실패한다고 설명한다.",
+        "길이 1의 예외 처리와 남은 마지막 원소 누락을 구분한다."
+      ],
+      "forbidden": [
+        "이전 버그가 모두 해결됐다고 주장한다.",
+        "첫 리뷰나 1단계 힌트에서 수정 조건식이나 완성 코드를 바로 제공한다."
+      ],
+      "previousCaseId": "missing-last"
+    }
+  ]
+}

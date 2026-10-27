@@ -1,0 +1,16 @@
+{
+  "relatedSkills": [
+    "Java 메서드 문법",
+    "구문 오류(Syntax Error) 디버깅"
+  ],
+  "evidence": [
+    "Solution.java:1: error: ',', ')', or '[' expected",
+    "제출 코드: public class Solution { public int solution(int[] numbers { int sum = 0; for (int number : numbers) sum += number; return sum; } }"
+  ],
+  "citedEvidenceIds": [],
+  "hints": [
+    "메서드를 선언할 때 매개변수 목록을 감싸는 괄호의 열림과 닫힘이 올바르게 짝을 이루고 있는지 확인해보세요.",
+    "public int solution(int[] numbers { 부분에서 매개변수 선언 뒤에 닫는 소괄호 ')'가 누락되어 컴파일 에러가 발생하고 있습니다.",
+    "메서드 선언 형식을 `접근제어자 반환타입 메서드이름(매개변수타입 매개변수이름) { 본문 }` 형태로 맞추어 닫는 소괄호를 추가해보세요."
+  ]
+}

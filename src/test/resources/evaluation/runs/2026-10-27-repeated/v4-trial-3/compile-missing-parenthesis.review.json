@@ -1,0 +1,16 @@
+{
+  "relatedSkills": [
+    "Java 메서드 선언 문법 (Method Declaration Syntax)",
+    "컴파일 구문 오류 분석 (Syntax Error Debugging)"
+  ],
+  "evidence": [
+    "컴파일 오류 진단: Solution.java:1: error: ',', ')', or '[' expected",
+    "제출 코드 1행: 'public int solution(int[] numbers {'에서 매개변수 선언 영역 뒤에 닫는 괄호 없이 메서드 본문 블록 시작 기호('{')가 위치함"
+  ],
+  "citedEvidenceIds": [],
+  "hints": [
+    "자바에서 메서드를 정의할 때 매개변수 목록(parameter list)을 둘러싸는 괄호 쌍이 올바르게 완성된 후 메서드 본문 블록이 시작되는지 문법 구조를 점검하세요.",
+    "제출된 코드의 메서드 선언부에서 'int[] numbers' 매개변수를 선언한 직후 매개변수 목록을 닫지 않고 바로 본문 블록('{')을 열어 구문 오류가 발생했습니다.",
+    "메서드 선언 형식을 '반환타입 메서드명(매개변수타입 매개변수명) { 본문 }'의 형태로 갖추도록 매개변수 목록 뒤에 닫는 소괄호를 추가하여 선언부를 완성하세요."
+  ]
+}

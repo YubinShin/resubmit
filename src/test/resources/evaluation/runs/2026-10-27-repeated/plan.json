@@ -1,0 +1,44 @@
+{
+  "createdAt": "2026-10-27T09:36:58.610881+00:00",
+  "commit": "2f4721067094b1b226b26ae03dcc5a23a347aa88",
+  "runnerSha256": "369951224f26b7262867ae0988aa81584f943aa8dd8964c08ed1d3f59b552da5",
+  "datasetSha256": "334c80905fcab5472e9343db6ff76d3ab6cd8d2c03d8afdd423fb62689e41671",
+  "datasetVersion": 2,
+  "model": "gemini-3.8-flash",
+  "maxCalls": 48,
+  "maxOutputTokens": 2048,
+  "retryCount": 0,
+  "timeoutSeconds": 30,
+  "rubric": {
+    "executionConsistency": "No statement contradicts actual compilation, execution or expected/actual values.",
+    "citationValidity": "Every cited ID exists in the current request; no AST evidence means not applicable.",
+    "evidenceInterpretation": "Claims are supported by code or execution, not merely an existing ID.",
+    "earlyDisclosure": "For failing submissions, evidence and hint 1 must not give the corrected token, condition or complete solution. Raw javac diagnostics are allowed as evidence; restating their fix in hint 1 fails. Borderline disclosures are uncertain, not pass.",
+    "falseWarning": "On passing submissions, do not invent a defect; optional simplification is not a defect warning.",
+    "resubmissionComparison": "For dependent cases, explicitly connect old/current code and test changes; partial-fix must retain the mixed failure. Unknown changes must remain unknown.",
+    "caseRequirements": "Also check each case's required and forbidden statements. Keep separate per-axis labels: pass, fail, uncertain, not_applicable."
+  },
+  "runOrder": [
+    "v3-trial-1",
+    "v4-trial-1",
+    "v4-trial-2",
+    "v3-trial-2",
+    "v3-trial-3",
+    "v4-trial-3"
+  ],
+  "templateSha256": {
+    "missing-last": "fb037a4e79e55c5b7a2c27ee1ae345af3e585172807fcb4c58bcdebe9c312d18",
+    "corrected": "24a239980fe5a64efc82fbe77d0ad4da79e01a2879731a811ae97bfdf94fd283",
+    "compile-error": "866cf9e0af8ea689aa7c1d56f3ab3ccd6beefa63abfd96994b6e057b3cefb2df",
+    "valid-nested-loop": "63cede3034ba4b9b0f8eb116b84718774b3bb360f8c3456df204fcf6c2a1b71e",
+    "missing-first": "029e340df9c7c0eab47bbd55b38e371f918d66e9cd77474bdb69d10f52ce0df9",
+    "compile-missing-parenthesis": "c84b5cf47fa70454695053d1717158b00b3e8b58b163b96972380c75817f6647",
+    "valid-foreach": "ed48f4436b7a71efff2424f1d3daffcab114a6bbe76d134c84935a1599c049fb",
+    "partial-fix": "928053ebba76cdd9ac2a45cbd8674efd5ccc66784786b31b9b3708645d7349b8"
+  },
+  "instructionSha256": {
+    "v3": "4338c75fa0b37f0e7eea578d795a12b2b83b44da9fa3640cbf8b91791c0ed4a7",
+    "v4": "4f77bf537a1912080ed15b90c1aad237fa87b0ab59a506117de0bfd68bbb976a"
+  },
+  "limits": "Same small sum problem; three trials are not population-level reliability. Dependent cases use each version's first response, so their context differs. No independent human grader."
+}

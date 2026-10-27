@@ -1,0 +1,294 @@
+{
+  "review-v3": {
+    "responses": 24,
+    "axes": {
+      "executionConsistency": {
+        "pass": 24
+      },
+      "citationValidity": {
+        "pass": 18,
+        "not_applicable": 6
+      },
+      "evidenceInterpretation": {
+        "pass": 24
+      },
+      "earlyDisclosure": {
+        "pass": 11,
+        "not_applicable": 9,
+        "fail": 3,
+        "uncertain": 1
+      },
+      "falseWarning": {
+        "not_applicable": 15,
+        "pass": 9
+      },
+      "resubmissionComparison": {
+        "not_applicable": 18,
+        "pass": 4,
+        "fail": 2
+      },
+      "caseRequirements": {
+        "pass": 22,
+        "fail": 2
+      }
+    },
+    "comparisonLocations": {
+      "hint_2": 3,
+      "absent": 2,
+      "evidence": 1
+    },
+    "usage": {
+      "total_input_tokens": 11032,
+      "total_output_tokens": 7320,
+      "total_thought_tokens": 8072,
+      "total_tokens": 26424
+    },
+    "requestTimeMs": {
+      "n": 24,
+      "median": 7343.0,
+      "min": 5082,
+      "max": 11360
+    },
+    "caseLabels": {
+      "missing-last": {
+        "earlyDisclosure": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "resubmissionComparison": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ]
+      },
+      "corrected": {
+        "earlyDisclosure": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ],
+        "resubmissionComparison": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      "compile-error": {
+        "earlyDisclosure": [
+          "fail",
+          "fail",
+          "fail"
+        ],
+        "resubmissionComparison": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ]
+      },
+      "valid-nested-loop": {
+        "earlyDisclosure": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ],
+        "resubmissionComparison": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ]
+      },
+      "missing-first": {
+        "earlyDisclosure": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "resubmissionComparison": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ]
+      },
+      "compile-missing-parenthesis": {
+        "earlyDisclosure": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "resubmissionComparison": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ]
+      },
+      "valid-foreach": {
+        "earlyDisclosure": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ],
+        "resubmissionComparison": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ]
+      },
+      "partial-fix": {
+        "earlyDisclosure": [
+          "uncertain",
+          "pass",
+          "pass"
+        ],
+        "resubmissionComparison": [
+          "fail",
+          "pass",
+          "fail"
+        ]
+      }
+    }
+  },
+  "review-v4": {
+    "responses": 24,
+    "axes": {
+      "executionConsistency": {
+        "pass": 24
+      },
+      "citationValidity": {
+        "pass": 18,
+        "not_applicable": 6
+      },
+      "evidenceInterpretation": {
+        "pass": 24
+      },
+      "earlyDisclosure": {
+        "pass": 15,
+        "not_applicable": 9
+      },
+      "falseWarning": {
+        "not_applicable": 15,
+        "pass": 9
+      },
+      "resubmissionComparison": {
+        "not_applicable": 18,
+        "pass": 6
+      },
+      "caseRequirements": {
+        "pass": 24
+      }
+    },
+    "comparisonLocations": {
+      "evidence": 6
+    },
+    "usage": {
+      "total_input_tokens": 16110,
+      "total_output_tokens": 8104,
+      "total_thought_tokens": 12481,
+      "total_tokens": 36695
+    },
+    "requestTimeMs": {
+      "n": 24,
+      "median": 8508.0,
+      "min": 5769,
+      "max": 16496
+    },
+    "caseLabels": {
+      "missing-last": {
+        "earlyDisclosure": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "resubmissionComparison": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ]
+      },
+      "corrected": {
+        "earlyDisclosure": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ],
+        "resubmissionComparison": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      },
+      "compile-error": {
+        "earlyDisclosure": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "resubmissionComparison": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ]
+      },
+      "valid-nested-loop": {
+        "earlyDisclosure": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ],
+        "resubmissionComparison": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ]
+      },
+      "missing-first": {
+        "earlyDisclosure": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "resubmissionComparison": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ]
+      },
+      "compile-missing-parenthesis": {
+        "earlyDisclosure": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "resubmissionComparison": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ]
+      },
+      "valid-foreach": {
+        "earlyDisclosure": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ],
+        "resubmissionComparison": [
+          "not_applicable",
+          "not_applicable",
+          "not_applicable"
+        ]
+      },
+      "partial-fix": {
+        "earlyDisclosure": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "resubmissionComparison": [
+          "pass",
+          "pass",
+          "pass"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "previousCaseId": "missing-last",
+  "hintLevel": 1,
+  "hint": "배열의 전체 원소를 순회할 때 인덱스가 도달해야 하는 마지막 유효 범위와 반복문의 종료 조건을 점검해 보세요.",
+  "presentation": "Scripted simulated learner; no human learning claim"
+}

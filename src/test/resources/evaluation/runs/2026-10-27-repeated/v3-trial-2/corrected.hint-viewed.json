@@ -1,0 +1,6 @@
+{
+  "previousCaseId": "missing-last",
+  "hintLevel": 1,
+  "hint": "배열의 전체 요소를 순회할 때 반복문의 시작 인덱스와 종료 조건이 모든 원소를 포함하는지 점검해 보세요.",
+  "presentation": "Scripted simulated learner; no human learning claim"
+}
